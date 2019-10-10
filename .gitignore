@@ -1,2 +1,4 @@
 input.txt
-*/.vscode/
+.vscode/
+*.o
+*.json
