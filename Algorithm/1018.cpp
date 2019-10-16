@@ -1,6 +1,4 @@
 #include <iostream>
-#include <algorithm>
-
 using namespace std;
 
 int min_change = 0x7FFFFFFF;
@@ -14,20 +12,22 @@ int chess[8][8] = {{1, 0, 1, 0, 1, 0, 1, 0},
                    {1, 0, 1, 0, 1, 0, 1, 0},
                    {0, 1, 0, 1, 0, 1, 0, 1}};
 
+
+
 void compare(int start_i, int start_j)
 {
-    int count_1 = 0;
-    int count_2 = 0;
-    
+    int count = 0;
     for (int i = 0; i < 8; i++)
-        for (int j = 0; j < 8; j++)
-            board[start_i + i][start_j + j] == chess[i][j] ? count_1++ : count_2++; 
-
-    if (min_change > count_1)
-        min_change = count_1;
-    if (min_change > count_2)
-        min_change = count_2;
+    for (int j = 0; j < 8; j++)
+    if(board[start_i + i][start_j + j] == chess[i][j])
+    count++;
+        
+    if (min_change > count)
+    min_change = count;
+    if (min_change > 64-count)
+    min_change = 64-count;    
 }
+
 int main()
 {
     int h, w;
@@ -42,8 +42,8 @@ int main()
     }
 
     for (int i = 0; i < h - 7; i++)
-        for (int j = 0; j < w - 7; j++)
-            compare(i, j);
+    for (int j = 0; j < w - 7; j++)
+    compare(i, j);
 
     cout << min_change << endl;
     return 0;
