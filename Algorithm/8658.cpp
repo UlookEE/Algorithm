@@ -14,7 +14,7 @@ int main()
 	for (int i = 1; i <= T; ++i)
 	{
 		int max = -1;
-		int min = 999999999;
+		int min = 0x7FFFFFFF;
 		
 		for (int j = 0; j < 10; j++) {
 			int count = 0;
@@ -31,6 +31,5 @@ int main()
 		
 		cout << '#' << i << ' ' << max << ' ' << min << '\n';
 	}
-
-	return 0;//정상종료시 반드시 0을 리턴해야합니다.
+	return 0;
 }
