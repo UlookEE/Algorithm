@@ -9,7 +9,8 @@ struct Node
     bool is_blue;
     Node *blueNext;
     Node() : val{0}, next{NULL}, is_blue{false}, blueNext{NULL}{};
-    Node(int _val, Node *_next, bool _is_blue = false, Node *_blueNext = NULL) : val{_val}, next{_next}, is_blue{_is_blue}, blueNext{blueNext} {}
+    Node(int val, Node *next, bool is_blue = false, Node *blueNext = NULL) :
+     val{val}, next{next}, is_blue{is_blue}, blueNext{blueNext} {}
 };
 
 Node *piece[4];
@@ -19,7 +20,7 @@ int maxSum = 0;
 void dfs(int depth, int sum)
 {
     if(depth == 10){
-        if(sum > maxSum)
+        if(sum > maxSum)A
             maxSum = sum;
         return;
     }
@@ -59,23 +60,22 @@ int main()
     narr[3] = (Node(36, narr + 2));
     narr[4] = (Node(34, narr + 3));
     narr[5] = (Node(32, narr + 4));
-    narr[6] = (Node(30, narr + 5));
+    narr[6] = (Node(30, narr + 5, true, narr + 33));
     narr[7] = (Node(28, narr + 6));
     narr[8] = (Node(26, narr + 7));
     narr[9] = (Node(24, narr + 8));
     narr[10] = (Node(22, narr + 9));
-    narr[11] = (Node(20, narr + 10));
+    narr[11] = (Node(20, narr + 10, true, narr + 30));
     narr[12] = (Node(18, narr + 11));
     narr[13] = (Node(16, narr + 12));
     narr[14] = (Node(14, narr + 13));
     narr[15] = (Node(12, narr + 14));
-    narr[16] = (Node(10, narr + 15));
+    narr[16] = (Node(10, narr + 15, true, narr + 28));
     narr[17] = (Node(8, narr + 16));
     narr[18] = (Node(6, narr + 17));
     narr[19] = (Node(4, narr + 18));
     narr[20] = (Node(2, narr + 19));
     narr[21] = (Node(0, narr + 20));
-    //narr[22] = (Node(-1, narr + 21));
 
     narr[23] = (Node(35, narr + 1));
     narr[24] = (Node(30, narr + 23));
@@ -92,12 +92,6 @@ int main()
     narr[32] = (Node(27, narr + 31));
     narr[33] = (Node(28, narr + 32));
     
-    narr[6].is_blue = true;
-    narr[6].blueNext = narr + 33;
-    narr[11].is_blue = true;
-    narr[11].blueNext = narr + 30;
-    narr[16].is_blue = true;
-    narr[16].blueNext = narr + 28;
     dfs(0,0);
     cout<<maxSum<<endl;
     return 0;
