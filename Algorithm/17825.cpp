@@ -20,7 +20,7 @@ int maxSum = 0;
 void dfs(int depth, int sum)
 {
     if(depth == 10){
-        if(sum > maxSum)A
+        if(sum > maxSum)
             maxSum = sum;
         return;
     }
