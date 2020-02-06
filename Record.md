@@ -1,4 +1,4 @@
-> * #### 새로운 것을 제외한 탐색
+> * #### Vector에 원소를 추가하면서 기존 것만 탐색
 ```cpp
 vector<int> v;
 		v.push_back(0); visited[0] = true; ans++;
