@@ -15,3 +15,30 @@ for (int i = 0; i < N; i++) {
 }
 ```
 - - - -
+> * #### 배열 공백 제거
+for (int i = 0; i < N; i++) {
+```cpp
+	int arrInd = 0;
+	memset(tmpArr, 0, N*sizeof(int));
+	for (int j = 0; j < N; j++) {
+		if (board[i][j] != 0) {
+			int blockIndex = j + 1;
+			while (board[i][blockIndex] == 0 && blockIndex < N)
+				blockIndex++;
+
+			if (board[i][j] == board[i][blockIndex] && blockIndex != N) {
+				board[i][j] *= 2;
+				board[i][blockIndex] = 0;
+				maxAns = board[i][j] > maxAns ? board[i][j] : maxAns;
+			}
+		}
+		if (board[i][j] != 0)
+			tmpArr[arrInd++] = board[i][j];
+	}
+	memcpy(board[i], tmpArr, N * sizeof(int));
+}
+```cpp
+- - - -
+> * #### stringstream에서 input 후의 getc 결과는 공백이 나온다 그리고 ungetc 또한 사용 가능하다
+> * #### mingw 에서는 getchar를 이용한 버퍼 관리가 안됨
+- - - -
