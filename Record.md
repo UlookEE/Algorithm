@@ -1,3 +1,4 @@
+> * #### 새로운 것을 제외한 탐색
 ```cpp
 vector<int> v;
 		v.push_back(0); visited[0] = true; ans++;
@@ -13,5 +14,4 @@ vector<int> v;
 			}
 		}
 ```
-* #### 새로운 것을 제외한 탐색
-- - -
+- - - -
