@@ -42,5 +42,12 @@ for (int i = 0; i < N; i++) {
 > * #### stringstream에서 input 후의 getc 결과는 공백이 나온다 그리고 ungetc 또한 사용 가능하다
 > * #### mingw 에서는 getchar를 이용한 버퍼 관리가 안됨
 - - - -
-> * #### Flag 비트마스킹 : 순서를 보지 않아도 알 수 있다. -> 
+> * #### Flag 비트마스킹 : 순서를 보지 않아도 알 수 있다.... -> DP with bitmask
 - - - -
+> * #### 특정 구간이 겹치는지 확인
+```cpp
+!(nBus.sx > bus.ex || nBus.ex < bus.sx)
+```
+- - -
+> * #### 레퍼런스 배열을 선언할 수 없다
+- - -
