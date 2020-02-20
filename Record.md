@@ -37,7 +37,7 @@ for (int i = 0; i < N; i++) {
 	}
 	memcpy(board[i], tmpArr, N * sizeof(int));
 }
-```cpp
+```
 - - - -
 > * #### stringstream에서 input 후의 getc 결과는 공백이 나온다 그리고 ungetc 또한 사용 가능하다
 > * #### mingw 에서는 getchar를 이용한 버퍼 관리가 안됨
@@ -57,3 +57,4 @@ for (int i = 0; i < N; i++) {
 ```
 - - -
 > * #### 다익스트라 with adjust matrix : edge 모델링이 필요 없다.
+- - -
