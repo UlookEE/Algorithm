@@ -55,3 +55,5 @@ for (int i = 0; i < N; i++) {
 ```cpp
 !(s.x>r.e.x || s.y>r.e.y || r.s.x>e.x || r.s.y>e.y)
 ```
+- - -
+> * #### 다익스트라 with adjust matrix : edge 모델링이 필요 없다.
