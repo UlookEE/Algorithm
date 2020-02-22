@@ -58,3 +58,12 @@ for (int i = 0; i < N; i++) {
 - - -
 > * #### 다익스트라 with adjust matrix : edge 모델링이 필요 없다.
 - - -
+```cpp
+Trie* & t //포인터 레퍼런스 선언
+bool operator<(const Matrix& m) const{
+	if (hei * wid != m.hei * m.wid)
+		return hei * wid < m.hei * m.wid;
+	return hei < m.hei;
+}// operator에 const 속성을 붙혀 주지 않으면 에러가 날 수도 있다.
+```
+- - -
